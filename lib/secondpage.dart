@@ -22,7 +22,7 @@ class _SecondPageState extends State<SecondPage> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(widget.title),
-          backgroundColor: Colors.orange,
+          backgroundColor: Colors.green,
         ),
         body: Center(
           child: Column(
@@ -31,7 +31,7 @@ class _SecondPageState extends State<SecondPage> {
               const Text(
                 'Ecran 2 - ScaffoldMessenger',
                 style: TextStyle(
-                  color: Colors.orange,
+                  color: Colors.green,
                   fontWeight: FontWeight.bold,
                   fontSize: 25,
                 ),
@@ -39,23 +39,20 @@ class _SecondPageState extends State<SecondPage> {
               const Padding(padding: EdgeInsets.only(bottom: 25)),
               ElevatedButton(
                 onPressed: () {
-                  ScaffoldMessenger.of(context)
-                      .showMaterialBanner(MaterialBanner(
+                  ScaffoldMessenger.of(context).showMaterialBanner(MaterialBanner(
                     content: const Text("Message de MaterialBanner"),
                     actions: <Widget>[
                       TextButton(
                           child: const Text('Ok!'),
                           onPressed: () {
-                            ScaffoldMessenger.of(context)
-                                .hideCurrentMaterialBanner();
+                            ScaffoldMessenger.of(context).hideCurrentMaterialBanner();
                           }),
                     ],
                   ));
                 },
                 child: const Text("MaterialBanner"),
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.resolveWith(
-                      (states) => Colors.deepOrangeAccent),
+                  backgroundColor: WidgetStateProperty.resolveWith((states) => Colors.lightGreenAccent),
                 ),
               ),
               const Padding(padding: EdgeInsets.only(bottom: 10)),
@@ -67,20 +64,19 @@ class _SecondPageState extends State<SecondPage> {
                 },
                 child: const Text("SnackBar"),
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.resolveWith(
-                      (states) => Colors.deepOrangeAccent),
+                  backgroundColor: WidgetStateProperty.resolveWith((states) => Colors.greenAccent),
                 ),
               ),
+              const Padding(padding: EdgeInsets.only(bottom: 10)),
               ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: const Text("go ecran 1"),
-              style: ButtonStyle(
-                backgroundColor:
-                    MaterialStateProperty.resolveWith((states) => Colors.red),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text("go ecran 1"),
+                style: ButtonStyle(
+                  backgroundColor: WidgetStateProperty.resolveWith((states) => Colors.blue),
+                ),
               ),
-            ),
             ],
           ),
         ),

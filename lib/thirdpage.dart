@@ -50,8 +50,17 @@ class _ThirdPageState extends State<ThirdPage> {
               ),
               child: const Text("AlertDialog"),
               style: ButtonStyle(
-                backgroundColor:
-                    MaterialStateProperty.resolveWith((states) => Colors.red),
+                backgroundColor: WidgetStateProperty.resolveWith((states) => Colors.deepOrangeAccent),
+              ),
+            ),
+            const Padding(padding: EdgeInsets.only(bottom: 10)),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text("go ecran 1"),
+              style: ButtonStyle(
+                backgroundColor: WidgetStateProperty.resolveWith((states) => Colors.blue),
               ),
             ),
           ],

@@ -15,6 +15,7 @@ class _FirstPageState extends State<FirstPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        backgroundColor: Colors.blue,
       ),
       body: Center(
         child: Column(
@@ -34,9 +35,7 @@ class _FirstPageState extends State<FirstPage> {
                   Navigator.pushNamed(context, '/route2');
                 },
                 child: const Text("Ecran 2 - ScaffoldMessenger"),
-                style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.resolveWith(
-                        (states) => Colors.orange))),
+                style: ButtonStyle(backgroundColor: WidgetStateProperty.resolveWith((states) => Colors.green))),
             const Padding(padding: EdgeInsets.only(bottom: 10)),
             ElevatedButton(
               onPressed: () {
@@ -44,8 +43,7 @@ class _FirstPageState extends State<FirstPage> {
               },
               child: const Text("Ecran 3 - AlertDialog"),
               style: ButtonStyle(
-                backgroundColor:
-                    MaterialStateProperty.resolveWith((states) => Colors.red),
+                backgroundColor: WidgetStateProperty.resolveWith((states) => Colors.red),
               ),
             ),
           ],
