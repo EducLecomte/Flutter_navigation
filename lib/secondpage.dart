@@ -71,6 +71,16 @@ class _SecondPageState extends State<SecondPage> {
                       (states) => Colors.deepOrangeAccent),
                 ),
               ),
+              ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text("go ecran 1"),
+              style: ButtonStyle(
+                backgroundColor:
+                    MaterialStateProperty.resolveWith((states) => Colors.red),
+              ),
+            ),
             ],
           ),
         ),
