@@ -12,13 +12,19 @@ class SecondPage extends StatefulWidget {
 class _SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () {
+    return PopScope(
+      canPop: true,
+      onPopInvoked: (didPop) {
         ScaffoldMessenger.of(context).removeCurrentMaterialBanner();
-        Navigator.pop(context, false);
-        //we need to return a future
-        return Future.value(false);
       },
+      // WillPopScope(
+      //   onWillPop: () {
+      //     ScaffoldMessenger.of(context).removeCurrentMaterialBanner();
+      //     Navigator.pop(context, false);
+      //     //we need to return a future
+      //     return Future.value(false);
+      //   },
+
       child: Scaffold(
         appBar: AppBar(
           title: Text(widget.title),
