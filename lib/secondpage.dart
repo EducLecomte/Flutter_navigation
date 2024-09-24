@@ -14,7 +14,7 @@ class _SecondPageState extends State<SecondPage> {
   Widget build(BuildContext context) {
     return PopScope(
       canPop: true,
-      onPopInvoked: (didPop) {
+      onPopInvokedWithResult: (didPop, dyn) {
         ScaffoldMessenger.of(context).removeCurrentMaterialBanner();
       },
       // WillPopScope(
